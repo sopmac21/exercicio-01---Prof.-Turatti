@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<title>HTML5 – Estrutura básica</title>
+	<style>
+		body {
+			background-color: rgb(105, 105, 173);
+			color: white;
+			font: normal 20pt Arial;
+		}
+	</style>	 
+</head>
+<body>
+	<h1>Olá, mundo</h1>
+	<p>Já me livrei da maldição</p>
+
+	<script>
+		// Exibir alerta na página 
+		window.alert('Minha primeira mensagem');
+		
+		// Botão de sim ou não
+		window.confirm('Está gostando de JS?');
+		
+		// Pergunta 
+		let nome = window.prompt('Qual é o seu nome?');
+		
+		// Função para capitalizar palavras com mais de dois caracteres
+		function capitalizarNome(nome) {
+			if (!nome) return ''; // Se o nome for vazio ou nulo
+			return nome.split(' ')
+					   .map(palavra => palavra.length > 2 ? palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase() : palavra.toLowerCase())
+					   .join(' ');
+		}
+
+		// Capitalizar o nome e exibir o resultado
+		if (nome) {
+			let nomeCapitalizado = capitalizarNome(nome);
+			window.alert(nomeCapitalizado);
+		}
+	</script>
+</body>
+</html>
